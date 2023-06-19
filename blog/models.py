@@ -19,6 +19,13 @@ class Patient(models.Model):
         ),
 
     )
+    placeOfBirth = (
+
+    )
+    height = models.IntergerField()
+    weight = models.IntergerField()
+    mail = models.CharField()
+    
     idd = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     age = models.IntergerField()
     gender = models.CharField(max_length=100,options=genderOptions)
