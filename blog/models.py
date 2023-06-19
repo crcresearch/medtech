@@ -22,13 +22,13 @@ class Patient(models.Model):
     placeOfBirth = (
 
     )
-    height = models.IntergerField()
-    weight = models.IntergerField()
-    mail = models.CharField()
+    height = models.IntegerField()
+    weight = models.IntegerField()
+    mail = models.CharField(max_length = 100)
     
     idd = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    age = models.IntergerField()
-    gender = models.CharField(max_length=100,options=genderOptions)
+    age = models.IntegerField()
+    gender = models.CharField(max_length=100,choices=genderOptions)
     #created_date = models.DateTimeField(default=timezone.now)
     #published_date = models.DateTimeField(blank=True, null=True)
 
