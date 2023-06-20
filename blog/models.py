@@ -112,3 +112,5 @@ class Patient(models.Model):
     drugs = models.CharField(max_length=100, choices=yes_no,null=True)
     religion = models.CharField(max_length=255,null=True)
     allergies = models.CharField(max_length=100, choices=yes_no,null=True)
+    last_diagnostic = models.TextField(null=True)
+    meds = models.TextField(null=True)
