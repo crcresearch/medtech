@@ -34,16 +34,20 @@
               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                 class="rounded-circle img-fluid" style="width: 150px;">
               <h5 class="my-3">{{patient.name}}</h5>
-              <b class="float-left">Last diagnostic</b><span class = "text-muted">{{patient.last_diagnostic}}</span>
+              <b class="float-left" style="width: 50%; text-align: center;">Last diagnostic:</b><span class = "float-left text-muted" style="width: 50%; text-align: center;">{{patient.last_diagnostic}}</span>
               <br>
-              <b class="float-left">Meds</b><span class = " text-muted">{{patient.meds}}</span>
+              <b class="float-left" style="width: 50%; text-align: center;">Meds:</b><span class = "float-left  text-muted" style="width: 50%; text-align: center;">{{patient.meds}}</span>
               <br>
-              <b class="float-left">Last visit</b><span class = "text-muted">{{patient.allergies}}</span>
+              <b class="float-left" style="width: 50%; text-align: center;">Last visit:</b><span class = "float-left text-muted" style="width: 50%; text-align: center;">{{patient.allergies}}</span>
               <br>
-              <b class="float-left">Allergies</b><span class = "text-muted">{{patient.allergies}}</span>
-
-              <div class="d-flex justify-content-center mb-2">
-                <button type="button" class="btn btn-primary">Contact</button>
+              <b class="float-left" style="width: 50%; text-align: center;">Allergies:</b><span class = "float-left text-muted" style="width: 50%; text-align: center;">{{patient.allergies}}</span>
+              <br>
+              <br>
+              <div class="d-float justify-align-center mb-2">
+                <button type="button" class="btn btn-primary">Diagnosis</button>
+              
+      
+        
               </div>
             </div>
           </div>
@@ -185,6 +189,10 @@
                               <p class="text-muted mb-0">{{patient.allergies}}</p>
                             </div>
                             </div>
+                            <br>
+                            <br>
+                            <div class="float-left" style="width: 50%; text-align: center;"></div>
+                            <button type="button" class="btn btn-primary">Contact</button>
                             
                   
 
