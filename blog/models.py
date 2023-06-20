@@ -6,7 +6,7 @@ from django.utils import timezone
 class Doctor(models.Model):
    name = models.CharField(max_length=150,null=True)
    location = models.TextField(null=True)
-#    Hospital=models.CharField(max_length=100,null=True)
+   Hospital=models.CharField(max_length=100,null=True)
    specialty = models.CharField(max_length=150,null=True)
    identification_card = models.IntegerField(null=True)
    EntranceHours=(
@@ -67,7 +67,7 @@ class Doctor(models.Model):
            '19:00', '19:00'
        )
    )
-   CheckIn = models.CharField(max_length=100,choices=EntranceHours, null=True)
+   CheckIn= models.CharField(max_length=100,choices=EntranceHours, null=True)
    CheckOut=models.CharField(max_length=100,choices=OutOfOffice,null=True)
    bio = models.TextField(null=True)
 
