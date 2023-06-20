@@ -28,10 +28,8 @@ def doctor(request):
             post.name = request.name
             post.save()
             print(Doctor.objects.all())
-            #return render(request, 'blog/patient.html', {})
             return redirect('blog/doctor.html', pk=post.pk)
     else:
-        #print(Patient.objects.all())
         doctors = Doctor.objects.all()
         doctor = doctors.first()
         form = Doctor()
