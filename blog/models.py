@@ -124,7 +124,7 @@ class Patient(models.Model):
 class Diagnosis(models.Model):
     diagnosis=models.CharField(max_length=250,null=True)
     prescription=models.CharField(max_length=250,null=True)
-
+    # patient = models.ForeignKey(Patient, related_name='diagnosis', on_delete=models.CASCADE, null=True)
 
 
 
