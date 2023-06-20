@@ -121,6 +121,11 @@ class Patient(models.Model):
    last_diagnostic = models.TextField(null=True)
    meds = models.TextField(null=True)
 
+class Diagnosis(models.Model):
+    diagnosis=models.CharField(max_length=250,null=True)
+    prescription=models.CharField(max_length=250,null=True)
+
+
 
 
 

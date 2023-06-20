@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from blog.views import patient
 from blog.views import doctor
+from blog.views import diagnosis
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('patient/', patient),
-    path('doctor/', doctor)
+    path('doctor/', doctor),
+    path('diagnosis/', diagnosis)
+
 ]
