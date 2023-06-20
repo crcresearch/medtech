@@ -6,9 +6,70 @@ class Doctor(models.Model):
     name = models.CharField(max_length=150)
     identification_card = models.IntegerField(max_length=200)
     specialty = models.CharField(max_length=150)
-    phone = models.IntegerField
+    phone = models.IntegerField()
     location = models.TextField()
     bio = models.TextField()
+    EntranceHours=(
+        (
+            '7:00', '7:00'
+        ),(
+            '8:00', '8:00'
+        ),(
+            '9:00', '9:00'
+        ),(
+            '10:00', '10:00'
+        ),(
+            '11:00', '11:00'
+        ),(
+            '12:00', '12:00'
+        ),(
+            '13:00', '13:00'
+        ),(
+            '14:00', '14:00'
+        ),(
+            '15:00', '15:00'
+        ),(
+            '16:00', '16:00'
+        ),(
+            '17:00', '17:00'
+        ),(
+            '18:00', '18:00'
+        ),(
+            '19:00', '19:00'
+        )
+    )
+    OutOfOffice=(
+        (
+            '7:00', '7:00'
+        ),(
+            '8:00', '8:00'
+        ),(
+            '9:00', '9:00'
+        ),(
+            '10:00', '10:00'
+        ),(
+            '11:00', '11:00'
+        ),(
+            '12:00', '12:00'
+        ),(
+            '13:00', '13:00'
+        ),(
+            '14:00', '14:00'
+        ),(
+            '15:00', '15:00'
+        ),(
+            '16:00', '16:00'
+        ),(
+            '17:00', '17:00'
+        ),(
+            '18:00', '18:00'
+        ),(
+            '19:00', '19:00'
+        )
+    )
+    CheckIn = models.CharField(max_length=100,choices=EntranceHours)
+    CheckOut=models.CharField(max_length=100,choices=OutOfOffice)
+
 
 
 class Patient(models.Model):
