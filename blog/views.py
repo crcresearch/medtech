@@ -1,6 +1,10 @@
 from django.shortcuts import render,redirect
 from .models import Patient
 from .models import Doctor
+from django.contrib.auth import logout
+from django.contrib.auth import authenticate, login
+
+
 
 def patient(request):
     if request.method == "POST":
@@ -35,5 +39,25 @@ def doctor(request):
         doctors = Doctor.objects.all()
         doctor = doctors.first()
         form = Doctor()
-        return render(request, 'blog/doctor.html',{'doctor':doctor})
+        groups = []
+        for group in request.user.groups:
+            groups.append(group.name)
+        return render(request, 'blog/doctor.html',{'doctor':doctor,'groups':group})
+
+
+def login_view(request):
+    
+    if request.method == 'POST':
+        login(request, user)
+        username = request.POST["username"]
+        password = request.POST["password"]
+        # Redirect to a success page.
+        user = authenticate(request, username=username, password=password)
+
+    else:
+        # Return an 'invalid login' error message.
+        print('Invalid login')
+
+def logout_view(request):
+    logout(request)
 

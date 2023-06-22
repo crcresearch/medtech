@@ -36,15 +36,17 @@
               <h5 class="my-3">{{patient.name}}</h5>
               <b class="float-left">Last diagnostic</b><span class = "text-muted">{{patient.last_diagnostic}}</span>
               <br>
-              <b class="float-left">Meds</b><span class = " text-muted">{{patient.meds}}</span>
+              <b class="float-left">Meds</b><span class = "text-left text-muted">{{patient.meds}}</span>
               <br>
-              <b class="float-left">Last visit</b><span class = "text-muted">{{patient.allergies}}</span>
+              <b class="float-left">Last visit</b><span class = "text-left text-muted">{{patient.allergies}}</span>
               <br>
-              <b class="float-left">Allergies</b><span class = "text-muted">{{patient.allergies}}</span>
+              <b class="float-left">Allergies</b><span class = "text-left text-muted">{{patient.allergies}}</span>
 
+              {% if 'Doctor' in groups %}
               <div class="d-flex justify-content-center mb-2">
                 <button type="button" class="btn btn-primary">Contact</button>
               </div>
+              {% endif %}
             </div>
           </div>
     
