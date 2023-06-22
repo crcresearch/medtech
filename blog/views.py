@@ -51,4 +51,3 @@ def diagnosis(request):
         diagnosis = diagnoses.first()
         form = Diagnosis()
         return render(request, 'blog/diagnosis.html',{'diagnosis':diagnosis})
-
