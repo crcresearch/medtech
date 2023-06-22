@@ -1,10 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Patient
-from .models import Doctor
-from django.contrib.auth import logout
-from django.contrib.auth import authenticate, login
-
-
+from .models import Patient, Doctor, Diagnosis
 
 def patient(request):
     if request.method == "POST":
@@ -32,10 +27,8 @@ def doctor(request):
             post.name = request.name
             post.save()
             print(Doctor.objects.all())
-            #return render(request, 'blog/patient.html', {})
             return redirect('blog/doctor.html', pk=post.pk)
     else:
-        #print(Patient.objects.all())
         doctors = Doctor.objects.all()
         doctor = doctors.first()
         form = Doctor()
@@ -44,20 +37,18 @@ def doctor(request):
             groups.append(group.name)
         return render(request, 'blog/doctor.html',{'doctor':doctor,'groups':group})
 
-
-def login_view(request):
-    
-    if request.method == 'POST':
-        login(request, user)
-        username = request.POST["username"]
-        password = request.POST["password"]
-        # Redirect to a success page.
-        user = authenticate(request, username=username, password=password)
-
+def diagnosis(request):
+    if request.method == "POST":
+        form = Diagnosis(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.name = request.name
+            post.save()
+            print(Diagnosis.objects.all())
+            return redirect('blog/diagnosis.html', pk=post.pk)
     else:
-        # Return an 'invalid login' error message.
-        print('Invalid login')
-
-def logout_view(request):
-    logout(request)
+        diagnoses = Diagnosis.objects.all()
+        diagnosis = diagnoses.first()
+        form = Diagnosis()
+        return render(request, 'blog/diagnosis.html',{'diagnosis':diagnosis})
 

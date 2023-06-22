@@ -17,14 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from blog.views import patient
 from blog.views import doctor
-from blog.views import login_view
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('patient/', patient),
-    path('doctor/', doctor),
-    path('login/',login_view),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('doctor/', doctor)
 ]
 
