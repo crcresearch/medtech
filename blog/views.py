@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Patient, Doctor, Diagnosis
+from .models import Patient, Doctor, Diagnosis, Book
 
 def patient(request):
     if request.method == "POST":
@@ -48,4 +48,19 @@ def diagnosis(request):
         diagnosis = diagnoses.first()
         form = Diagnosis()
         return render(request, 'blog/diagnosis.html',{'diagnosis':diagnosis})
+    
+def book(request):
+    if request.method == "POST":
+        form = Book(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.name = request.name
+            post.save()
+            print(Book.objects.all())
+            return redirect('blog/book.html', pk=post.pk)
+    else:
+        Books = Book.objects.all()
+        book = Books.first()
+        form = Book()
+        return render(request, 'blog/book.html',{'book':book})
 

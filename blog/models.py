@@ -126,8 +126,34 @@ class Diagnosis(models.Model):
     prescription=models.CharField(max_length=250,null=True)
     # patient = models.ForeignKey(Patient, related_name='diagnosis', on_delete=models.CASCADE, null=True)
 
-
-
-
+class Book(models.Model):
+    dates={
+       (
+       'Monday Jan 6', 'Monday Jan 6'
+       ),(
+       'Tuesday Jan 7', 'Tuesday Jan 7'
+       ),(
+       'Wednesday Jan 8', 'Wednesday Jan 8'
+       ),(
+       'Thursday Jan 9', 'Thursday Jan 9'
+       ),(
+       'Friday Jan 10', 'Friday Jan 10'
+       ),(
+       'Saturday Jan 11', 'Saturday Jan 11'
+       )
+    }
+    appointment=models.CharField(max_length=100,choices=dates,null=True)
+    hours={
+       (
+       '8:30 - 9:00', '8:30 - 9:00'
+       ),(
+       '10:00 - 10:30', '10:00 - 10:30'
+       ),(
+       '12:30 - 13:00 ', '12:30 - 13:00'
+       ),(
+       '15:00 - 15:30', '15:00 - 15:30'
+       )
+    }
+    availability_hours=models.CharField(max_length=100,choices=hours,null=True)
 
 
