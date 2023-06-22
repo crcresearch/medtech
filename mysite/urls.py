@@ -21,6 +21,7 @@ from blog.views import doctor
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('patient/', patient),
-    path('doctor/', doctor)
+    path('doctor/', doctor),
+    path("accounts/", include("django.contrib.auth.urls")),  # new
 ]
 
